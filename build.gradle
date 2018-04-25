@@ -12,6 +12,10 @@ buildscript {
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
+
+    // Required plugins added to classpath to facilitate pushing to JCenter/Bintray
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
   }
 }
 
@@ -19,6 +23,7 @@ allprojects {
   repositories {
     google()
     jcenter()
+    maven {url 'https://dl.bintray.com/alannaogrady/maven'}
   }
 }
 
@@ -41,4 +46,9 @@ ext {
   // ValidateTor Library Info
   libVersionCode = 1
   libVersionName = '1.0.0'
+  libPomUrl = 'https://github.com/alannaOgrady/tutorial_lib'
+  libGithubRepo = 'alannaOgrady/tutorial_lib'
+  libModuleName = 'validatetor'
+  libModuleDesc = 'Android library for fast and simple string validation.'
+  libBintrayName = 'validatetor'
 }
